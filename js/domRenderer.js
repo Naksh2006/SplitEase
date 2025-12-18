@@ -34,7 +34,14 @@ export function renderMembers(project) {
   list.innerHTML = paid.innerHTML = part.innerHTML = "";
 
   project.members.forEach(m => {
-    list.innerHTML += `<span>${m}</span>`;
+    list.innerHTML += `
+  <span>
+    ${m}
+    <button data-name="${m}" style="margin-left:5px;">✕</button>
+  </span>
+  `
+;
+
     paid.innerHTML += `<option>${m}</option>`;
     part.innerHTML += `
       <div>
@@ -78,7 +85,24 @@ export function renderActivity(project) {
   });
 }
 
+export function showEmptyState() {
+  document.getElementById("memberList").innerHTML = "";
+  document.getElementById("participantsContainer").innerHTML = "";
+  document.getElementById("balances").innerHTML = "";
+  document.getElementById("settlements").innerHTML = "";
+  document.getElementById("activityLog").innerHTML = "";
+
+  const projectList = document.getElementById("projectList");
+  projectList.innerHTML = "<p style='color:#777'>No projects yet. Add one to get started.</p>";
+}
+
 export function renderAll() {
+  if (!appState.activeProjectId) {
+    showEmptyState();
+    renderProjects();
+    return;
+  }
+
   const project = getActiveProject();
   if (!project) return;
 

@@ -19,6 +19,9 @@ The current version runs entirely in the browser and is designed to be extended 
 - Mark settlements as completed
 - Live activity feed showing all actions within a project
 - Persistent data using browser localStorage
+- Delete projects
+- Remove members with zero balance
+- Reset a project while keeping members
 
 ---
 

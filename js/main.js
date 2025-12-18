@@ -94,3 +94,50 @@ settleBtn.onclick = () => {
     settleBtn.textContent = "Show Settlements";
   }
 };
+document.getElementById("deleteProjectBtn").onclick = () => {
+  if (!appState.activeProjectId) return;
+
+  const ok = confirm("Are you sure you want to delete this project?");
+  if (!ok) return;
+
+  appState.projects = appState.projects.filter(
+    p => p.id !== appState.activeProjectId
+  );
+
+  appState.activeProjectId =
+    appState.projects.length > 0 ? appState.projects[0].id : null;
+
+  saveState();
+  renderAll();
+};
+document.getElementById("memberList").onclick = e => {
+  if (e.target.tagName !== "BUTTON") return;
+
+  const project = getActiveProject();
+  const name = e.target.dataset.name;
+
+  if (project.balances[name] !== 0) {
+    alert("Cannot remove member with unsettled balance");
+    return;
+  }
+
+  project.members = project.members.filter(m => m !== name);
+  delete project.balances[name];
+
+  saveState();
+  renderAll();
+};
+document.getElementById("resetProjectBtn").onclick = () => {
+  const project = getActiveProject();
+  if (!project) return;
+
+  const ok = confirm("This will clear balances and activity. Continue?");
+  if (!ok) return;
+
+  project.members.forEach(m => project.balances[m] = 0);
+  project.settlements = [];
+  project.activity = [];
+
+  saveState();
+  renderAll();
+};

@@ -47,4 +47,16 @@ No backend or authentication is implemented in the current version.
 ---
 
 ## Project Structure
+---
+## Live Demo
+
+The current frontend version is deployed using GitHub Pages:  
+👉 [Click to view the application](https://naksh2006.github.io/SplitEase/)
+
+## Current Status
+
+This project is currently implemented as a frontend-only application.  
+All data is stored locally in the browser using localStorage.
+
+The codebase is intentionally structured to allow future extension into a full-stack application with backend persistence and authentication.
 

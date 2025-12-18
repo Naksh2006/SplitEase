@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SplitEase</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="container">
+
+  <h1>SplitEase</h1>
+  <p class="subtitle">Project-wise expense sharing</p>
+<div class="main-layout">
+<div class="left-panel">
+  <!-- Projects -->
+  <section>
+    <h2>Projects</h2>
+    <input id="projectInput" placeholder="Project / Trip name">
+    <button id="addProjectBtn">Add Project</button>
+    <div id="projectList"></div>
+  </section>
+
+  <!-- Members -->
+  <section>
+    <h2>Add Member</h2>
+    <input id="memberInput" placeholder="Member name">
+    <button id="addMemberBtn">Add Member</button>
+    <div id="memberList"></div>
+  </section>
+
+  <!-- Expense -->
+  <section>
+    <h2>Add Expense</h2>
+    <input id="amountInput" type="number" placeholder="Amount">
+    <select id="paidBySelect"></select>
+
+    <select id="splitType">
+      <option value="equal">Split equally</option>
+      <option value="percent">Split by percentage</option>
+    </select>
+
+    <div id="participantsContainer"></div>
+    <button id="addExpenseBtn">Add Expense</button>
+  </section>
+</div>
+<div class="right-panel">
+  <!-- Balances -->
+  <section>
+    <h2>Balances</h2>
+    <div id="balances"></div>
+  </section>
+
+  <!-- Settlements -->
+  <section>
+      <h2>Settle Up</h2>
+      <button id="toggleSettleBtn">Show Settlements</button>
+      <div id="settlements" style="display:none;"></div>
+    </section>
+
+  <!-- Activity -->
+  <section>
+    <h2>Activity</h2>
+    <div id="activityLog"></div>
+  </section>
+</div>
+</div>
+</div>
+
+<script type="module" src="js/main.js"></script>
+</body>
+</html>

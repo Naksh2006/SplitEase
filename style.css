@@ -1,0 +1,92 @@
+* {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background: #f4f6f8;
+  margin: 0;
+  padding: 20px;
+}
+
+.container {
+  max-width: 700px;
+  margin: auto;
+  background: #fff;
+  padding: 25px;
+  border-radius: 8px;
+}
+
+.subtitle {
+  text-align: center;
+  color: #777;
+}
+
+section {
+  margin-top: 30px;
+}
+
+input, select, button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+button {
+  background: #4caf50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background: blue;
+}
+
+#memberList span,
+#projectList span {
+  display: inline-block;
+  background: #eaeaea;
+  padding: 6px 12px;
+  margin: 5px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.balance-positive {
+  color: green;
+}
+
+.balance-negative {
+  color: red;
+}
+#projectList span {
+  display: inline-block;
+  background: #eaeaea;
+  padding: 6px 12px;
+  margin: 5px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+#projectList span.active-project {
+  background: #4caf50;
+  color: white;
+  font-weight: bold;
+}
+.main-layout {
+  display: flex;
+  gap: 20px;
+}
+
+.left-panel {
+  flex: 1;
+}
+
+.right-panel {
+  flex: 1;
+  background: #fafafa;
+  padding: 15px;
+  border-radius: 8px;
+}
+

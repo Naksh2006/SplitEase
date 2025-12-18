@@ -58,5 +58,4 @@ The current frontend version is deployed using GitHub Pages:
 This project is currently implemented as a frontend-only application.  
 All data is stored locally in the browser using localStorage.
 
-The codebase is intentionally structured to allow future extension into a full-stack application with backend persistence and authentication.
 
